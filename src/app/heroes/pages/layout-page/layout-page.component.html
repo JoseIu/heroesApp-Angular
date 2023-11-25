@@ -1,0 +1,33 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push" class="nav">
+    <mat-toolbar class="nav__toolbar" color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <mat-list-item
+        *ngFor="let item of sidebarItems"
+        [routerLink]="item.url"
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon matListItemIcon>{{ item.icon }} </mat-icon>
+        {{ item.label }}
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <header class="header">
+    <mat-toolbar class="header__toolbar wrapper" color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <button mat-button>Logout</button>
+    </mat-toolbar>
+  </header>
+
+  <div class="wrapper content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

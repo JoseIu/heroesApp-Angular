@@ -1,0 +1,16 @@
+.nav {
+  width: 15.625rem;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  background-color: #673ab7;
+  &__toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.content {
+  padding: 1em 2em;
+}

@@ -1,0 +1,22 @@
+.heroes {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    gap: 1em;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 0.5em;
+  &__chips {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+  }
+}

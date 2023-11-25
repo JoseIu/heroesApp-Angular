@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+.wrapper {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  // scrollbar-gutter: stable;
+}
+* {
+  box-sizing: border-box;
+}

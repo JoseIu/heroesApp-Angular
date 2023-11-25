@@ -1,0 +1,44 @@
+<ng-template #spinner>
+  <spinner-spinner></spinner-spinner>
+</ng-template>
+<!---INFO DEL HEROES-->
+<section *ngIf="hero; else spinner">
+  <h2>{{ hero.superhero }}</h2>
+  <div class="info-hero">
+    <img
+      [src]="hero | heroImage"
+      [alt]="hero.superhero"
+      class="info-hero__img"
+    />
+
+    <div>
+      <mat-list>
+        <mat-list-item>
+          <span matListItemTitle>Nombre</span>
+          <span matListItemLine>{{ hero.alter_ego }} </span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle>Primera aparición</span>
+          <span matListItemLine>{{ hero.first_appearance }} </span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle>Heroe</span>
+          <span matListItemLine>{{ hero.superhero }} </span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle>Editora</span>
+          <span matListItemLine>{{ hero.publisher }} </span>
+        </mat-list-item>
+      </mat-list>
+
+      <mat-chip-listbox>
+        <mat-chip
+          class="hero__chip"
+          *ngFor="let chip of hero.characters.split(',')"
+        >
+          {{ chip }}
+        </mat-chip>
+      </mat-chip-listbox>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<mat-card *ngFor="let hero of heroes" class="hero">
+  <img mat-card-image [src]="hero | heroImage" [alt]="hero.superhero" />
+  <!----CONTENIDO---->
+  <mat-card-content>
+    <mat-card-title>{{ hero.superhero }}</mat-card-title>
+    <mat-card-subtitle>{{ hero.alter_ego }}</mat-card-subtitle>
+
+    <mat-chip-listbox class="hero__chips">
+      <mat-chip
+        class="hero__chip"
+        *ngFor="let chip of hero.characters.split(',') | slice : 0 : 3"
+      >
+        {{ chip }}
+      </mat-chip>
+    </mat-chip-listbox>
+  </mat-card-content>
+
+  <mat-card-actions class="hero__btns">
+    <button mat-button color="primary" [routerLink]="['/heroes/edit', hero.id]">
+      <mat-icon>edit</mat-icon>
+      Editar
+    </button>
+    <button mat-button color="primary" [routerLink]="['/heroes', hero.id]">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
