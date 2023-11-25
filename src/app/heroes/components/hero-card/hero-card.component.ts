@@ -8,4 +8,5 @@ import { Hero } from '../../interfaces/herto.interface';
 })
 export class HeroCardComponent {
   @Input() public heroes: Hero[] = [];
+  @Input() public selectedhero?: Hero;
 }
