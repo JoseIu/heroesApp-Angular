@@ -166,6 +166,33 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "id": "Iv73Npu",
+      "superhero": "Naruto",
+      "publisher": "DC Comics",
+      "alter_ego": "Jinchuriki",
+      "first_appearance": "Naruto cap #1",
+      "characters": "Naruto, Jinchuriki",
+      "alt_img": "https://pngimg.com/d/naruto_PNG32.png"
+    },
+    {
+      "id": "ykmoGUe",
+      "superhero": "Dead-Pool",
+      "publisher": "Marvel Comics",
+      "alter_ego": "Dead-Pool",
+      "first_appearance": "New Mutants (vol. 1) #98",
+      "characters": "Dead Pool",
+      "alt_img": "https://i.ebayimg.com/images/g/uy8AAOSw1QZkgMJx/s-l1600.jpg"
+    },
+    {
+      "id": "loWJ67q",
+      "superhero": "Venom",
+      "publisher": "Marvel Comics",
+      "alter_ego": "Venom",
+      "first_appearance": "The Amazing: Spider-Man #299",
+      "characters": "Venom",
+      "alt_img": "https://www.zonanegativa.com/imagenes/2021/11/Venom-2021-1-cover.jpg"
     }
   ]
 }
