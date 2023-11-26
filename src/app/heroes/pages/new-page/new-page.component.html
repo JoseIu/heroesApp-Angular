@@ -1,1 +1,53 @@
-<p>new-page works!</p>
+<section>
+  <h2>Edit /Add hero <span>Super-Man</span></h2>
+
+  <div class="container">
+    <form class="form">
+      <mat-card class="form__card">
+        <div class="form__name">
+          <mat-form-field>
+            <mat-label>Super Hero</mat-label>
+            <input matInput type="text" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Alter ego</mat-label>
+            <input matInput type="text" required />
+          </mat-form-field>
+        </div>
+
+        <mat-form-field>
+          <mat-label>Characters</mat-label>
+          <input matInput type="text" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Publisher</mat-label>
+          <mat-select matNativeControl required="">
+            <mat-option
+              *ngFor="let publisher of publuhers"
+              [value]="publisher.id"
+            >
+              {{ publisher.text }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="form__btns">
+          <button mat-flat-button type="submit" color="primary">
+            <mat-icon>save</mat-icon> Guardar
+          </button>
+          <button mat-flat-button type="submit" color="warn">
+            <mat-icon>delete</mat-icon> Borrar
+          </button>
+        </div>
+      </mat-card>
+    </form>
+
+    <mat-card>
+      <img
+        matCardImage
+        src="https://www.tn8.tv/wp-content/uploads/2023/03/2-616.jpg"
+        alt=""
+      />
+    </mat-card>
+  </div>
+</section>
