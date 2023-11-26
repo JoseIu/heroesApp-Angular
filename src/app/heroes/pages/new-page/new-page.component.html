@@ -1,28 +1,36 @@
 <section>
-  <h2>Edit /Add hero <span>Super-Man</span></h2>
+  <h2>{{ currentHero.id ? "Edit" : "Add" }} Hero</h2>
 
   <div class="container">
-    <form class="form">
+    <form class="form" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
       <mat-card class="form__card">
         <div class="form__name">
           <mat-form-field>
             <mat-label>Super Hero</mat-label>
-            <input matInput type="text" required />
+            <input matInput type="text" required formControlName="superhero" />
           </mat-form-field>
           <mat-form-field>
             <mat-label>Alter ego</mat-label>
-            <input matInput type="text" required />
+            <input matInput type="text" required formControlName="alter_ego" />
           </mat-form-field>
         </div>
-
+        <mat-form-field>
+          <mat-label>First aparition</mat-label>
+          <input
+            matInput
+            type="text"
+            required
+            formControlName="first_appearance"
+          />
+        </mat-form-field>
         <mat-form-field>
           <mat-label>Characters</mat-label>
-          <input matInput type="text" required />
+          <input matInput type="text" required formControlName="characters" />
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Publisher</mat-label>
-          <mat-select matNativeControl required="">
+          <mat-select matNativeControl required formControlName="publisher">
             <mat-option
               *ngFor="let publisher of publuhers"
               [value]="publisher.id"
@@ -30,6 +38,10 @@
               {{ publisher.text }}
             </mat-option>
           </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Alternative Image</mat-label>
+          <input matInput type="text" required formControlName="alt_img" />
         </mat-form-field>
         <div class="form__btns">
           <button mat-flat-button type="submit" color="primary">
@@ -42,12 +54,28 @@
       </mat-card>
     </form>
 
-    <mat-card>
+    <mat-card class="hero">
       <img
         matCardImage
-        src="https://www.tn8.tv/wp-content/uploads/2023/03/2-616.jpg"
-        alt=""
+        [src]="currentHero | heroImage"
+        [alt]="currentHero.superhero"
+        class="hero__img"
       />
+
+      <mat-card-content class="hero__content">
+        <mat-card-subtitle class="hero__subtitle"
+          ><span class="hero__span">Hero: </span>{{ currentHero.superhero }}
+        </mat-card-subtitle>
+        <mat-card-subtitle class="hero__subtitle">
+          <span class="hero__span">Real Name: </span>
+          {{ currentHero.alter_ego }}
+        </mat-card-subtitle>
+
+        <mat-card-subtitle class="hero__subtitle"
+          ><span class="hero__span">Publisher: </span>
+          {{ currentHero.publisher }}
+        </mat-card-subtitle>
+      </mat-card-content>
     </mat-card>
   </div>
 </section>
