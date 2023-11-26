@@ -21,10 +21,10 @@ import { heroImagePipe } from './pipes/hero-image.pipe';
     NewPageComponent,
     SearchPageComponent,
     HeroCardComponent,
+    SpinnerComponent,
 
     //PIPES
     heroImagePipe,
-    SpinnerComponent,
   ],
   imports: [
     CommonModule,
