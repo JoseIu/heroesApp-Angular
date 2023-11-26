@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2em;
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form {
+  &__card {
+    padding: 1em;
+  }
+  &__name {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5em;
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
