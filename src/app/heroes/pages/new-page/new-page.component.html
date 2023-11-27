@@ -2,7 +2,7 @@
   <h2>{{ currentHero.id ? "Edit" : "Add" }} Hero</h2>
 
   <div class="container">
-    <form class="form" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
+    <form class="form" [formGroup]="heroForm">
       <mat-card class="form__card">
         <div class="form__name">
           <mat-form-field>
@@ -44,10 +44,10 @@
           <input matInput type="text" required formControlName="alt_img" />
         </mat-form-field>
         <div class="form__btns">
-          <button mat-flat-button type="submit" color="primary">
+          <button mat-flat-button color="primary" (click)="onSubmit()">
             <mat-icon>save</mat-icon> Guardar
           </button>
-          <button mat-flat-button type="submit" color="warn">
+          <button mat-flat-button color="warn" (click)="onDeleteHero()">
             <mat-icon>delete</mat-icon> Borrar
           </button>
         </div>
